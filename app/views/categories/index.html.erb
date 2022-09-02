@@ -1,8 +1,12 @@
 <div class="container">
   <% @categories.each do |c| %>
-    <h1><%= c.name %></h1>
+    <%= link_to category_path(c) do %>
+      <h1><%= c.name %></h1>
+    <% end %>
     <%= link_to category_path(c), method: :delete do %>
       <button>Delete</button>
     <% end %>
   <% end  %>
 </div>
+
+<h3><%= link_to 'Create new category', new_category_path  %></h3>
